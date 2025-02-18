@@ -1,431 +1,1912 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syed Hassan Ali | Portfolio</title>
+    <link href="pngwing.com.png" rel="icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
+        }
 
-  <title>Syed Hassan Ali Portfolio</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+        body {
+            background-color: #f3f2ef;
+        }
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon1.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+        .navbar {
+            background-color: white;
+            padding: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            z-index: 100;
+        }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        .nav-container {
+            max-width: 1128px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            height: 52px;
+        }
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+        .nav-search {
+            background-color: #eef3f8;
+            padding: 0.5rem;
+            border-radius: 4px;
+            width: 280px;
+            border: none;
+        }
 
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.75rem;
+            color: rgba(0,0,0,0.6);
+            cursor: pointer;
+            min-width: 80px;
+        }
+
+        .nav-item i {
+            font-size: 1.3rem;
+            margin-bottom: 4px;
+        }
+
+        .nav-item:hover {
+            color: rgba(0,0,0,0.9);
+        }
+
+        .main-content {
+            max-width: 1128px;
+            margin: 72px auto 0;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 300px;
+            gap: 24px;
+        }
+
+        .profile-card {
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid rgba(0,0,0,0.08);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .profile-background {
+            height: 200px;
+            position: relative;
+            background: #004182;  /* LinkedIn default cover color */
+        }
+
+        .cover-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .camera-button {
+            position: absolute;
+            right: 16px;
+            top: 16px;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .camera-button:hover {
+            background: #fff;
+        }
+
+        .profile-photo-container {
+            position: relative;
+            margin: -80px 0 0 24px;
+            width: 152px;
+            height: 152px;
+        }
+
+        .profile-photo {
+            width: 152px;
+            height: 152px;
+            border: 4px solid white;
+            border-radius: 50%;
+            background: #fff;
+        }
+
+        .photo-button {
+            position: absolute;
+            right: 4px;
+            bottom: 4px;
+            background: #fff;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .profile-info {
+            padding: 16px 24px 24px;
+        }
+
+        .profile-name-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .profile-left {
+            flex: 1;
+        }
+
+        .profile-right {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .institution-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 200px;
+        }
+
+        .institution-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        .institution-name {
+            font-size: 14px;
+            color: rgba(0,0,0,0.9);
+            font-weight: 500;
+        }
+
+        .current-company {
+            margin-top: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(0,0,0,0.9);
+        }
+
+        .company-info {
+            margin-top: 12px;
+        }
+
+        .company-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .company-item img {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+        }
+
+        .company-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .company-name {
+            font-weight: 600;
+            color: rgba(0,0,0,0.9);
+        }
+
+        .company-position {
+            font-size: 14px;
+            color: rgba(0,0,0,0.9);
+        }
+
+        .company-duration {
+            font-size: 14px;
+            color: rgba(0,0,0,0.6);
+        }
+
+        .connection-stats {
+            display: flex;
+            margin-top: 12px;
+            gap: 24px;
+        }
+
+        .connection-item {
+            color: #0a66c2;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .connection-item:hover {
+            text-decoration: underline;
+            color: #0a66c2;
+            text-decoration: none;
+        }
+
+        .btn {
+            padding: 6px 16px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #0a66c2;
+            color: white;
+            border: none;
+        }
+
+        .btn-secondary {
+            background-color: rgba(0,0,0,0.02);
+            color: rgba(0,0,0,0.6);
+            border: 1px solid rgba(0,0,0,0.6);
+        }
+
+        .company-logos {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .company-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+        }
+
+        .stats {
+            color: rgba(0,0,0,0.6);
+            font-size: 14px;
+            margin-top: 12px;
+        }
+
+        .sidebar {
+            margin-top: 8px;
+        }
+
+        .sidebar-card {
+            background: white;
+            border-radius: 8px;
+            border: 1px solid rgba(0,0,0,0.08);
+            padding: 16px;
+            margin-bottom: 8px;
+        }
+
+        .sidebar-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 16px;
+            }
+
+            .nav-search {
+                width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 12px;
+            }
+
+            .nav-search, .nav-item span {
+                display: none;
+            }
+        }
+
+        .message-bar {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            margin-right: 20px;
+            z-index: 1000;
+        }
+
+        .message-header {
+            padding: 8px 12px;
+            background: #fff;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .message-header:hover {
+            background: #f3f2ef;
+        }
+
+        .message-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 8px;
+            border: 1px solid rgba(0,0,0,0.08);
+            margin-bottom: 8px;
+            padding: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .experience-item, .education-item, .skill-item {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .add-button {
+            color: rgba(0,0,0,0.6);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px;
+            border-radius: 50%;
+        }
+
+        .add-button:hover {
+            background-color: rgba(0,0,0,0.08);
+        }
+
+        .online-status {
+            width: 8px;
+            height: 8px;
+            background-color: #057642;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border: 2px solid white;
+        }
+
+        .message-profile {
+            position: relative;
+            display: inline-block;
+        }
+
+        .certificate-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .certificate-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 4px;
+        }
+
+        .interest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+        }
+
+        .interest-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .interest-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+        }
+
+        .publication-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .publication-image {
+            width: 120px;
+            height: 80px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        .publication-details {
+            flex: 1;
+        }
+
+        .publication-title {
+            font-weight: 600;
+            font-size: 16px;
+            color: rgba(0,0,0,0.9);
+            margin-bottom: 4px;
+        }
+
+        .publication-authors {
+            color: rgba(0,0,0,0.6);
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .publication-meta {
+            color: rgba(0,0,0,0.6);
+            font-size: 14px;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;  /* Increased gap between items */
+            padding: 8px 0;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;  /* Increased gap between icon and text */
+            text-decoration: none;
+            color: rgba(0,0,0,0.9);
+            font-size: 15px;  /* Slightly larger text */
+            padding: 4px 0;
+        }
+
+        .social-link i {
+            width: 24px;  /* Increased from 20px */
+            font-size: 20px;  /* Increased icon size */
+            color: #0a66c2;
+        }
+
+        .social-link:hover {
+            color: #0a66c2;
+            background-color: rgba(10, 102, 194, 0.05);  /* Added hover background */
+            border-radius: 4px;
+            padding: 4px 8px;  /* Added padding for hover effect */
+            margin: 0 -8px;    /* Compensate for padding */
+        }
+
+        .skills-container {
+            max-height: 250px;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .skills-container.expanded {
+            max-height: 1000px;
+        }
+
+        .show-more-skills {
+            color: #0a66c2;
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 8px 0;
+            width: 100%;
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        .show-more-skills:hover {
+            background-color: rgba(10, 102, 194, 0.05);
+        }
+
+        .expandable-container {
+            max-height: 250px;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .expandable-container.expanded {
+            max-height: 1000px;
+        }
+
+        .show-more-button {
+            color: #0a66c2;
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 8px 0;
+            width: 100%;
+            text-align: center;
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .show-more-button:hover {
+            background-color: rgba(10, 102, 194, 0.05);
+        }
+
+        .show-more-button i {
+            transition: transform 0.3s ease;
+        }
+
+        .show-more-button.expanded i {
+            transform: rotate(180deg);
+        }
+
+        .resume-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #0a66c2;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .resume-link:hover {
+            text-decoration: underline;
+        }
+
+        .about-section {
+            padding: 24px;
+        }
+
+        .about-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .about-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: rgba(0,0,0,0.9);
+        }
+
+        .edit-button {
+            color: rgba(0,0,0,0.6);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+        }
+
+        .edit-button:hover {
+            background-color: rgba(0,0,0,0.08);
+        }
+
+        .about-content {
+            font-size: 14px;
+            color: rgba(0,0,0,0.9);
+            line-height: 1.5;
+            white-space: pre-wrap;
+        }
+
+        .experience-timeline {
+            position: relative;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 68px; /* Adjusted to start from first dot */
+            bottom: 0;
+            width: 2px;
+            background-color: rgba(0,0,0,0.08);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 45px;
+            margin-bottom: 24px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 11px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(0,0,0,0.6);
+            border-radius: 50%;
+        }
+
+        .company-group {
+            margin-bottom: 8px;
+        }
+
+        .company-logo-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            margin-left: -12px; /* Move logo more to left */
+        }
+
+        .company-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 4px;
+            margin-left: 0; /* Reset any existing margin */
+        }
+
+        .company-name-header {
+            font-size: 16px;
+            font-weight: 600;
+            color: rgba(0,0,0,0.9);
+            margin-bottom: 4px;
+        }
+
+        .role-duration {
+            font-size: 14px;
+            color: rgba(0,0,0,0.6);
+            margin-bottom: 4px;
+        }
+
+        .role-item {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+
+        .role-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(0,0,0,0.6);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .role-item:last-child::after {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 16px;
+            bottom: -16px;
+            width: 2px;
+            background-color: white; /* Hide the timeline after last item */
+        }
+
+        .open-to-work {
+            flex: 1;
+            background-color: rgba(10, 102, 194, 0.08);
+            border-radius: 8px;
+            padding: 12px 16px;
+            max-width: calc(50% - 24px); /* Exact 50% minus padding */
+            margin: 0; /* Remove margin to match sizes */
+        }
+
+        .open-to-work-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #0a66c2;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .open-to-work-roles {
+            color: rgba(0,0,0,0.9);
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .show-details-link {
+            color: rgba(0,0,0,0.6);
+            font-size: 14px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .show-details-link:hover {
+            color: #0a66c2;
+            text-decoration: underline;
+        }
+
+        .profile-banners {
+            display: flex;
+            gap: 8px;
+            padding: 4px 16px 12px;
+        }
+
+        .profile-banner {
+            flex: 1;
+            background: white;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 8px;
+            padding: 12px 16px;
+            max-width: calc(50% - 24px); /* Exact 50% minus padding */
+        }
+
+        .hiring-banner {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .banner-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(0,0,0,0.9);
+        }
+
+        .get-started-btn {
+            color: rgba(0,0,0,0.6);
+            font-size: 14px;
+            font-weight: 600;
+            background: none;
+            border: none;
+            padding: 6px 0;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .get-started-btn:hover {
+            color: #0a66c2;
+        }
+
+        .profile-actions-row {
+            display: flex;
+            gap: 8px;
+            padding: 4px 16px 12px;
+            align-items: stretch; /* Make containers equal height */
+        }
+
+        .show-more-count {
+            color: rgba(0,0,0,0.6);
+            font-size: 14px;
+            margin-left: 4px;
+        }
+
+        .certificate-link {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .certificate-link:hover .company-name {
+            color: #0a66c2;
+            text-decoration: underline;
+        }
+
+        .analytics-card {
+            padding: 20px 24px;
+        }
+
+        .analytics-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .analytics-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: rgba(0,0,0,0.9);
+        }
+
+        .private-badge {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: rgba(0,0,0,0.6);
+            font-size: 14px;
+        }
+
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .analytics-item {
+            padding: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .analytics-item:hover {
+            background-color: rgba(0,0,0,0.04);
+        }
+
+        .analytics-number {
+            font-size: 20px;
+            font-weight: 600;
+            color: rgba(0,0,0,0.9);
+            margin-bottom: 4px;
+        }
+
+        .analytics-label {
+            font-size: 14px;
+            color: rgba(0,0,0,0.6);
+            line-height: 1.4;
+        }
+
+        .analytics-trend {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        .trend-up {
+            color: #057642;
+        }
+
+        .publication-card {
+            padding: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .publication-card:hover {
+            background-color: rgba(0,0,0,0.04);
+        }
+
+        .publication-content {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .publication-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #0a66c2;
+            line-height: 1.4;
+        }
+
+        .publication-description {
+            font-size: 14px;
+            color: rgba(0,0,0,0.9);
+            line-height: 1.4;
+            margin: 4px 0;
+        }
+
+        .publication-meta {
+            font-size: 14px;
+            color: rgba(0,0,0,0.6);
+        }
+
+        .publication-card {
+            display: flex;
+            gap: 16px;
+            padding: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .publication-card:hover {
+            background-color: rgba(0,0,0,0.04);
+        }
+
+        .publication-image {
+            width: 160px;
+            height: 110px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .publication-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .publication-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: rgba(0,0,0,0.9);
+            line-height: 1.4;
+        }
+
+        .publication-description {
+            font-size: 14px;
+            color: rgba(0,0,0,0.6);
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .publication-meta {
+            font-size: 14px;
+            color: rgba(0,0,0,0.6);
+            margin-top: auto;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            border-bottom: none;
+        }
+
+        .skill-item:hover {
+            background-color: rgba(0,0,0,0.04);
+        }
+
+        .skill-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            background-color: #f3f2ef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .skill-logo i {
+            font-size: 24px;
+            color: rgba(0,0,0,0.6);
+        }
+
+        .skill-info {
+            flex: 1;
+        }
+
+        .skill-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: rgba(0,0,0,0.9);
+            margin-bottom: 4px;
+        }
+
+        .skill-endorsements {
+            font-size: 14px;
+            color: rgba(0,0,0,0.6);
+        }
+
+        .footer {
+            background-color: #fff;
+            padding: 24px 0;
+            margin-top: 24px;
+        }
+
+        .footer-container {
+            max-width: 1128px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .footer-section h4 {
+            color: rgba(0,0,0,0.9);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: rgba(0,0,0,0.6);
+            text-decoration: none;
+            font-size: 14px;
+            display: block;
+            padding: 4px 0;
+        }
+
+        .footer-links a:hover {
+            color: #0a66c2;
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: #0a66c2;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .footer-copyright {
+            color: rgba(0,0,0,0.6);
+            font-size: 12px;
+            margin-left: 16px;
+        }
+    </style>
 </head>
-<style>
-  .button-container {
-    text-align: center; /* Center the button */
-}
-
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #688aad; /* Blue color */
-    color: #ffffff; /* White text color */
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    text-decoration: none; /* Remove underline from link */
-    transition: background-color 0.3s ease;
-}
-
-.button:hover {
-    background-color: #0056b3; /* Darker blue color on hover */
-}
-
-</style>
-
 <body>
-
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
-
-      <div class="profile">
-        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Syed Hassan Ali</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href="https://github.com/syedly" class="github"><i class="bx bxl-github"></i></a>
-          <a href="https://www.facebook.com/profile.php?id=100017323891846" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="https://www.instagram.com/__abstract__.1/" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="https://wa.me/923294193741" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
-          <a href="https://www.linkedin.com/in/syed-ali-110828257/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="34" height="34" fill="#0a66c2">
+                    <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+                </svg>
+                <input type="text" class="nav-search" placeholder="Search" />
+            </div>
+            <div class="nav-right">
+                <div class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-user-friends"></i>
+                    <span>My Network</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Jobs</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-comment-dots"></i>
+                    <span>Messaging</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-bell"></i>
+                    <span>Notifications</span>
+                </div>
+                <div class="nav-item">
+                    <img src="profile.jpeg" alt="Me" width="24" height="24" style="border-radius: 50%;" />
+                    <span>Me <i class="fas fa-caret-down"></i></span>
+                </div>
+            </div>
         </div>
-      </div>
+    </nav>
 
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projects</span></a></li>
-          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
+    <main class="main-content">
+        <div class="profile-section">
+            <div class="profile-card">
+                <div class="profile-background">
+                    <img src="cover.jpg" alt="Cover" class="cover-image">
+                    <button class="camera-button">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                </div>
+                
+                <div class="profile-photo-container">
+                    <img src="profile.jpeg" alt="Profile Photo" class="profile-photo">
+                    <button class="photo-button">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                </div>
+
+                <div class="profile-info">
+                    <div class="profile-name-section">
+                        <div class="profile-left">
+                            <h2 class="profile-name">Syed Ali</h2>
+                            <p class="profile-headline">Full Stack Web Developer | Expert in Django Framework | Building Scalable and Dynamic Web Solutions</p>
+                            <p class="profile-location" style="color: rgb(128, 121, 121);">Lahore, Punjab, Pakistan · <a href="#" style="color: #0a66c2; text-decoration: none;">Contact info</a></p>
+                            <a href="Resume(SHAS).pdf" class="resume-link">
+                                <i class="fas fa-file-alt"></i>
+                                <span>Resume</span>
+                            </a>
+                        </div>
+                        <div class="profile-right">
+                            <div class="institution-wrapper">
+                                <img src="company.jpeg" alt="Company" class="institution-logo">
+                                <span class="institution-name">BitFicial Technologies</span>
+                            </div>
+                            <div class="institution-wrapper">
+                                <img src="logo.png" alt="University" class="institution-logo">
+                                <span class="institution-name">NCBA&E</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="connection-stats">
+                        <a href="#" class="connection-item">
+                            <span>1,525 followers</span>
+                        </a>
+                        <a href="#" class="connection-item">
+                            <span>500+ connections</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="profile-actions" style="margin-left: 15px; margin-bottom: 10px;">
+                    <button class="btn btn-primary">Open to</button>
+                    <button class="btn btn-secondary">Add profile section</button>
+                    <button class="btn btn-secondary">More</button>
+                </div>
+
+                <div class="profile-actions-row">
+                    <div class="open-to-work">
+                        <div class="open-to-work-header">
+                            <i class="fas fa-bookmark"></i>
+                            Open to work
+                        </div>
+                        <div class="open-to-work-roles">
+                            Django Developer, Python Developer roles
+                        </div>
+                        <a href="#" class="show-details-link">Show details</a>
+                    </div>
+                    <div class="profile-banner">
+                        <div class="hiring-banner">
+                            <span class="banner-title">Share that you're hiring</span>
+                            <button class="get-started-btn">Get started</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <div class="analytics-card">
+                    <div class="analytics-header">
+                        <h2 class="analytics-title">Analytics</h2>
+                        <span class="private-badge">
+                            <i class="fas fa-eye"></i>
+                            Private to you
+                        </span>
+                    </div>
+                    <div class="analytics-grid">
+                        <div class="analytics-item">
+                            <div class="analytics-number">45</div>
+                            <div class="analytics-label">profile views</div>
+                            <div class="analytics-trend trend-up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>8 since last week</span>
+                            </div>
+                        </div>
+                        <div class="analytics-item">
+                            <div class="analytics-number">12</div>
+                            <div class="analytics-label">post impressions</div>
+                            <div class="analytics-trend trend-up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>3 since last week</span>
+                            </div>
+                        </div>
+                        <div class="analytics-item">
+                            <div class="analytics-number">28</div>
+                            <div class="analytics-label">search appearances</div>
+                            <div class="analytics-trend trend-up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>5 since last week</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="profile-card">
+                <div class="about-section">
+                    <div class="about-header">
+                        <h2 class="about-title">About</h2>
+                        <button class="edit-button">
+                            <i class="fas fa-pen"></i>
+                        </button>
+                    </div>
+                    <div class="about-content">
+🚀 Full Stack Developer | Django Expert | React Enthusiast  
+
+I'm a passionate Full Stack Developer with expertise in building scalable web applications. My core strengths include:  
+                        
+        • Backend Development with Django and Django REST Framework (DRF)  
+        • Frontend Development with React.js and Modern JavaScript  
+        • Database Design and Optimization using MySQL  
+        • RESTful API Development  
+        • Version Control with Git and GitHub  
+                        
+I thrive on turning complex problems into simple, beautiful, and intuitive solutions. I have experience working with <strong>OpenAI</strong> and <strong>Gemini</strong> API keys and have created interactive chatbots.  
+Always eager to learn new technologies and best practices in software development. Open to collaborating on interesting projects and discussing tech innovations.  
+
+Skills: Python, Django, Django REST Framework, JavaScript, React.js, HTML, CSS, MySQL, Git, GitHub</div>
+                </div>
+            </div>
+
+            <!-- Experience Section -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h2 class="section-title">Experience</h2>
+                    <button class="add-button">
+                        <i class="fas fa-pen edit-icon"></i>
+                    </button>
+                </div>
+                <div class="experience-timeline">
+                    <div class="timeline-item">
+                        <div class="company-group">
+                            <div class="company-logo-wrapper">
+                                <img src="company.jpeg" alt="BitFicial" class="company-logo">
+                                <div>
+                                    <h3 class="company-name-header">BitFicial Technologies</h3>
+                                    <p>Full-time · 2 positions</p>
+                                </div>
+                            </div>
+                            <div class="role-item">
+                                <div class="company-details">
+                                    <span class="company-name">Full Stack Developer</span>
+                                    <span class="role-duration">Jul 2023 - Present · 7 mos</span>
+                                    <span class="company-location">Lahore, Pakistan</span>
+                                </div>
+                            </div>
+                            <div class="role-item">
+                                <div class="company-details">
+                                    <span class="company-name">Django Developer Intern</span>
+                                    <span class="role-duration">Jan 2023 - Jun 2023 · 6 mos</span>
+                                    <span class="company-location">Lahore, Pakistan</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Section -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h2 class="section-title">Education</h2>
+                    <button class="add-button">
+                        <i class="fas fa-pen edit-icon"></i>
+                    </button>
+                </div>
+                <div class="education-item">
+                    <div class="company-item">
+                        <img src="logo.png" alt="NCBA&E">
+                        <div class="company-details">
+                            <span class="company-name">NCBA&E</span>
+                            <span class="company-position">Bachelor of Science in Computer Science</span>
+                            <span class="company-duration">2019 - 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Publications Section -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h2 class="section-title">Publications</h2>
+                    <button class="add-button">
+                        <i class="fas fa-pen edit-icon"></i>
+                    </button>
+                </div>
+                <div class="expandable-container" id="publicationsContainer">
+                    
+                        <div class="publication-content">
+                            <h3 class="publication-title">BotSphere - AI-Powered Chat Application</h3>
+                            <a href="https://botsphere.pythonanywhere.com" target="_blank" style="
+                                    cursor: pointer; 
+                                    border-radius: 100px; 
+                                    height: 32px; 
+                                    width: 150px;
+                                    padding: 6px 16px;
+                                    background-color: transparent;
+                                    border: 1px solid rgba(0,0,0,0.6);
+                                    color: rgba(0,0,0,0.6);
+                                    font-size: 14px;
+                                    font-weight: 600;
+                                    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto;
+                                    display: inline-flex;
+                                    align-items: center;
+                                    gap: 4px;
+                                    transition: background-color 0.1s ease-in-out;
+                                    text-decoration: none;
+                                ">
+                                Show publication
+                                <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                                    <path d="M15 1v6h-2V4.41L7.41 10 6 8.59 11.59 3H9V1zm-4 10a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1h2V3H5a3 3 0 00-3 3v5a3 3 0 003 3h5a3 3 0 003-3V9h-2z"></path>
+                                </svg>
+                            </a>
+                            <p class="publication-description">
+                                A sophisticated chatbot platform built with Python and Django, featuring natural language processing capabilities, real-time conversation handling, and customizable bot personalities.
+                            </p>
+                            <div class="publication-meta">
+                                Published on GitHub · 2024
+                            </div>
+                        </div>
+                        <br>
+                        <div class="publication-content">
+                            <h3 class="publication-title">ChatConnect - Real-time Messaging Platform</h3>
+                            <a href="https://chatconnect.pythonanywhere.com" target="_blank" style="
+                                    cursor: pointer; 
+                                    border-radius: 100px; 
+                                    height: 32px; 
+                                    width: 150px;
+                                    padding: 6px 16px;
+                                    background-color: transparent;
+                                    border: 1px solid rgba(0,0,0,0.6);
+                                    color: rgba(0,0,0,0.6);
+                                    font-size: 14px;
+                                    font-weight: 600;
+                                    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto;
+                                    display: inline-flex;
+                                    align-items: center;
+                                    gap: 4px;
+                                    transition: background-color 0.1s ease-in-out;
+                                    text-decoration: none;
+                                ">
+                                Show publication
+                                <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                                    <path d="M15 1v6h-2V4.41L7.41 10 6 8.59 11.59 3H9V1zm-4 10a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1h2V3H5a3 3 0 00-3 3v5a3 3 0 003 3h5a3 3 0 003-3V9h-2z"></path>
+                                </svg>
+                            </a>
+                            <p class="publication-description">
+                                ChatConnect is a cutting-edge platform that brings the essence of real-time communication to life. Powered by Django Channels and built using Django's generic views, this sleek and efficient chat app enables users to engage in seamless, instantaneous conversations. From private chats to group discussions, ChatConnect captivates users with its intuitive design and lightning-fast performance. Deployed on PythonAnywhere, it sets a new standard for real-time interaction—an exciting convergence of innovation and connectivity, shaping the future of online communication.
+                            </p>
+                            <div class="publication-meta">
+                                Published on GitHub · 2023
+                            </div>
+                        </div>
+                        <br>
+                        <div class="publication-content">
+                            <h3 class="publication-title">Influx - Social Media Analytics Dashboard</h3>
+                            <a href="https://orginflux.pythonanywhere.com" target="_blank" style="
+                            cursor: pointer; 
+                            border-radius: 100px; 
+                            height: 32px; 
+                            width: 150px;
+                            padding: 6px 16px;
+                            background-color: transparent;
+                            border: 1px solid rgba(0,0,0,0.6);
+                            color: rgba(0,0,0,0.6);
+                            font-size: 14px;
+                            font-weight: 600;
+                            font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto;
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 4px;
+                            transition: background-color 0.1s ease-in-out;
+                            text-decoration: none;
+                        ">
+                        Show publication
+                        <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M15 1v6h-2V4.41L7.41 10 6 8.59 11.59 3H9V1zm-4 10a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1h2V3H5a3 3 0 00-3 3v5a3 3 0 003 3h5a3 3 0 003-3V9h-2z"></path>
+                        </svg>
+                    </a>
+                            <p class="publication-description">
+                                A Django-based marvel, redefining the social media landscape. This vibrant platform, a dazzling clone of the beloved Instagram, captivates users with its sleek design, seamless navigation, and powerful features. From sharing life's moments to engaging with a thriving community, Influx encapsulates the essence of visual storytelling. Embrace the revolution of connectivity and expression with Influx—a convergence of innovation and familiarity, setting the stage for a new era in social media experiences.
+                            </p>
+                            <div class="publication-meta">
+                                Published on GitHub · 2023
+                            </div>
+                        </div>
+                </div>
+                <button class="show-more-button" id="showMorePublications">
+                    Show more publications
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h2 class="section-title">Skills</h2>
+                    <button class="add-button">
+                        <i class="fas fa-pen edit-icon"></i>
+                    </button>
+                </div>
+                <div class="skills-container" id="skillsContainer">
+                    <div class="skill-item">
+                        <div class="skill-logo">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-name">Python</div>
+                            <div class="skill-endorsements">7 endorsements</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-logo">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-name">Django</div>
+                            <div class="skill-endorsements">6 endorsements</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-logo">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-name">Django REST Framework</div>
+                            <div class="skill-endorsements">5 endorsements</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-logo">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-name">JavaScript</div>
+                            <div class="skill-endorsements">5 endorsements</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-logo">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-name">React.js</div>
+                            <div class="skill-endorsements">4 endorsements</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-logo">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-name">MySQL/Database</div>
+                            <div class="skill-endorsements">5 endorsements</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-logo">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-name">HTML</div>
+                            <div class="skill-endorsements">6 endorsements</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-logo">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-name">CSS</div>
+                            <div class="skill-endorsements">6 endorsements</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-logo">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-name">Web Development</div>
+                            <div class="skill-endorsements">7 endorsements</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-logo">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-name">Git/GitHub</div>
+                            <div class="skill-endorsements">5 endorsements</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="show-more-button" id="showMoreSkills">
+                    Show all skills
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+
+            <!-- Licenses & Certifications -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h2 class="section-title">Licenses & Certifications</h2>
+                    <button class="add-button">
+                        <i class="fas fa-pen edit-icon"></i>
+                    </button>
+                </div>
+                <div class="expandable-container" id="certificatesContainer">
+                    <div class="certificate-item">
+                        <a href="https://www.hackerrank.com/certificates/006796a9a0dd" class="certificate-link">
+                            <img src="hackerrank_logo.jpeg" alt="HackerRank" class="certificate-logo">
+                            <div class="company-details">
+                                <span class="company-name">SQL</span>
+                                <span class="company-position">HackerRank</span>
+                                <span class="company-duration">Issued Jan 2023</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <a href="https://www.hackerrank.com/certificates/74084455d1c4" class="certificate-link">
+                            <img src="hackerrank_logo.jpeg" alt="HackerRank" class="certificate-logo">
+                            <div class="company-details">
+                                <span class="company-name">Css</span>
+                                <span class="company-position">HackerRank</span>
+                                <span class="company-duration">Issued Jan 2023</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <a href="https://www.kaggle.com/learn/certification/syedly4/pandas" class="certificate-link">
+                            <img src="kaggle.jpeg" alt="Kaggle" class="certificate-logo">
+                            <div class="company-details">
+                                <span class="company-name">Python Pandas</span>
+                                <span class="company-position">Kaggle</span>
+                                <span class="company-duration">Issued Mar 2023</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <a href="https://www.kaggle.com/learn/certification/syedly4/python" class="certificate-link">
+                            <img src="kaggle.jpeg" alt="Kaggle" class="certificate-logo">
+                            <div class="company-details">
+                                <span class="company-name">Python Programming</span>
+                                <span class="company-position">Kaggle</span>
+                                <span class="company-duration">Issued Mar 2023</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <a href="https://www.kaggle.com/learn/certification/syedly4/intro-to-programming" class="certificate-link">
+                            <img src="kaggle.jpeg" alt="Kaggle" class="certificate-logo">
+                            <div class="company-details">
+                                <span class="company-name">Introduction to programming</span>
+                                <span class="company-position">Kaggle</span>
+                                <span class="company-duration">Issued Mar 2023</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <a href="https://certificates.simplicdn.net/share/4685849_1701417314.pdf" class="certificate-link">
+                            <img src="simplilearn.jpeg" alt="SimpliLearn" class="certificate-logo">
+                            <div class="company-details">
+                                <span class="company-name">Introduction to FrontEnd</span>
+                                <span class="company-position">SimpliLearn</span>
+                                <span class="company-duration">Issued Mar 2023</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <a href="https://certificates.simplicdn.net/share/4684984_1701391612.pdf" class="certificate-link">
+                            <img src="simplilearn.jpeg" alt="SimpliLearn" class="certificate-logo">
+                            <div class="company-details">
+                                <span class="company-name">Python Django</span>
+                                <span class="company-position">SimpliLearn</span>
+                                <span class="company-duration">Issued Mar 2023</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <a href="https://certificates.simplicdn.net/share/4684810_1701384065.pdf" class="certificate-link">
+                            <img src="simplilearn.jpeg" alt="SimpliLearn" class="certificate-logo">
+                            <div class="company-details">
+                                <span class="company-name">Python</span>
+                                <span class="company-position">SimpliLearn</span>
+                                <span class="company-duration">Issued Mar 2023</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <a href="https://olympus.mygreatlearning.com/courses/12761/certificate" class="certificate-link">
+                            <img src="great_learning_logo.jpeg" alt="Great Learning" class="certificate-logo">
+                            <div class="company-details">
+                                <span class="company-name">Introduction to Html</span>
+                                <span class="company-position">Great Learning</span>
+                                <span class="company-duration">Issued Mar 2023</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <a href="https://olympus.mygreatlearning.com/courses/65515/certificate" class="certificate-link">
+                            <img src="great_learning_logo.jpeg" alt="Great Learning" class="certificate-logo">
+                            <div class="company-details">
+                                <span class="company-name">Webdevelopment</span>
+                                <span class="company-position">Great Learning</span>
+                                <span class="company-duration">Issued Mar 2023</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <a href="https://olympus.mygreatlearning.com/courses/56747/certificate" class="certificate-link">
+                            <img src="great_learning_logo.jpeg" alt="Great Learning" class="certificate-logo">
+                            <div class="company-details">
+                                <span class="company-name">Python Pandas</span>
+                                <span class="company-position">Great Learning</span>
+                                <span class="company-duration">Issued Mar 2023</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <a href="https://olympus.mygreatlearning.com/courses/12682/certificate" class="certificate-link">
+                            <img src="great_learning_logo.jpeg" alt="Great Learning" class="certificate-logo">
+                            <div class="company-details">
+                                <span class="company-name">Python</span>
+                                <span class="company-position">Great Learning</span>
+                                <span class="company-duration">Issued Mar 2023</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <button class="show-more-button" id="showMoreCertificates">
+                    Show all 12 certificates
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+
+            <!-- Interests -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h2 class="section-title">Interests</h2>
+                </div>
+                <div class="interest-grid">
+                    <div class="interest-item">
+                        <img src="google.png" alt="Tech Company" class="interest-logo">
+                        <div>
+                            <h3>Google</h3>
+                            <p>2.5M followers</p>
+                        </div>
+                    </div>
+                    <div class="interest-item">
+                        <img src="microsoft.png" alt="Tech Company" class="interest-logo">
+                        <div>
+                            <h3>Microsoft</h3>
+                            <p>1.8M followers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Causes -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h2 class="section-title">Causes</h2>
+                </div>
+                <div class="card-body">
+                    <p>• Civil Rights and Social Action</p>
+                    <p>• Education</p>
+                    <p>• Science and Technology</p>
+                    <p>• Environmental Sustainability</p>
+                </div>
+            </div>
+        </div>
+
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <h3>Profile language</h3>
+                <p>English</p>
+            </div>
+            <div class="sidebar-card">
+                <h3>Public profile & URL</h3>
+                <div class="social-links">
+                    <a href="https://github.com/syedly" class="social-link">
+                        <i class="fab fa-github"></i>
+                        <span>github.com/syedali</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/syed-ali-110828257/" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>linkedin.com/in/syedali</span>
+                    </a>
+                    <a href="https://wa.me/923294193741" class="social-link">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+92 329 4193741</span>
+                    </a>
+                    <a href="https://www.instagram.com/__abstract__.1/" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                        <span>@syedali.dev</span>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100017323891846" class="social-link">
+                        <i class="fab fa-facebook"></i>
+                        <span>facebook.com/syedali</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>hassanshah9153@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Message Bar -->
+    <div class="message-bar">
+        <div class="message-header">
+            <div class="message-left">
+                <div class="message-profile">
+                    <img src="profile.jpeg" alt="Me" width="32" height="32" style="border-radius: 50%;">
+                    <span class="online-status"></span>
+                </div>
+                <span>Messaging</span>
+            </div>
+            <div class="message-controls">
+                <i class="fas fa-edit"></i>
+                <i class="fas fa-ellipsis-h" style="margin: 0 8px;"></i>
+                <i class="fas fa-chevron-up"></i>
+            </div>
+        </div>
     </div>
-  </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Syed Hassan Ali</h1>
-      <p>I'm <span class="typed" data-typed-items="Developer, Freelancer, Designer"></span></p>
-    </div>
-  </section><!-- End Hero -->
-
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>About</h2>
-          <p>Empowering Digital Dreams with Vision and Code.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Full Stack Web Developer.</h3>
-            <p class="fst-italic">
-              Meet Hassan, your digital architect with a penchant for turning dreams into dynamic realities. From the first click to the final pixel, I craft immersive online experiences that captivate, engage, and inspire. Fuelled by a relentless curiosity and a thirst for innovation, I thrive on the cutting edge of technology, pushing boundaries and challenging conventions with every line of code. Let's embark on a journey where imagination knows no bounds and the digital horizon stretches endlessly before us.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>16 August 2000</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>syedly.github.io</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+92 329 4193741</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Lahore, Pakistan</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>24</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor in CS</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>hassanshah9153@gmail.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
-              </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>General</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Sign Up</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Developers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Browse LinkedIn</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Learning</a></li>
+                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#">Salary</a></li>
+                        <li><a href="#">Mobile</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Business Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Talent</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Sales</a></li>
+                        <li><a href="#">Learning</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Directories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Members</a></li>
+                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#">Companies</a></li>
+                        <li><a href="#">Featured</a></li>
+                        <li><a href="#">Posts</a></li>
+                        <li><a href="#">Articles</a></li>
+                        <li><a href="#">Schools</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Section -->
-
-
-
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p>As a versatile web developer, I've mastered the art of crafting dynamic web solutions using Python and Django, along with proficiency in JavaScript, HTML, and CSS. From backend development with Django to frontend design and interactivity using JavaScript and HTML/CSS, I bring a well-rounded skill set to every project. Let's collaborate to bring your digital aspirations to life with precision and flair!</p>
-        </div>
-
-        <div class="row skills-content">
-
-          <div class="col-lg-6" data-aos="fade-up">
-
-            <div class="progress">
-              <span class="skill">HTML <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="21" height="21" fill="currentColor">
+                        <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+                    </svg>
+                    LinkedIn
+                </div>
+                <span class="footer-copyright">© 2024</span>
             </div>
-
-            <div class="progress">
-              <span class="skill">CSS <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">MySql <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">React<i class="val">40%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="progress">
-              <span class="skill">Python <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Django <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Django Rest framework(DRF) <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">JavaScript<i class="val">55%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-          </div>
-
         </div>
+    </footer>
 
-      </div>
-    </section><!-- End Skills Section -->
+    <script>
+        function setupExpandable(containerId, buttonId, itemName) {
+            const container = document.getElementById(containerId);
+            const button = document.getElementById(buttonId);
+            
+            button.addEventListener('click', function() {
+                const isExpanded = container.classList.contains('expanded');
+                container.classList.toggle('expanded');
+                button.classList.toggle('expanded');
+                
+                // Update button text and icon
+                if (itemName === 'skills') {
+                    button.innerHTML = `${isExpanded ? 'Show all 12' : 'Show less'} ${itemName}<i class="fas fa-chevron-down"></i>`;
+                } else if (itemName === 'certificates') {
+                    button.innerHTML = isExpanded ? 
+                        `Show all 12 ${itemName}<i class="fas fa-chevron-down"></i>` : 
+                        `Show less<i class="fas fa-chevron-down"></i>`;
+                } else {
+                    button.innerHTML = `${isExpanded ? 'Show all' : 'Show less'} ${itemName}<i class="fas fa-chevron-down"></i>`;
+                }
+            });
+        }
 
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container">
-
-        <div  style="display: flex; justify-content: space-between; align-items: center;" class="section-title">
-          <h2>Resume</h2>
-          <div class="button-container">
-            <a class="button nav-link js-scroll-trigger" href="Resume(SHAS).pdf">Resume</a>
-        </div>        
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title">Sumary</h3>
-            <div class="resume-item pb-0">
-              <h4>Syed Hassan Ali</h4>
-              <p><em>I'm Hassan, a Full Stack Web Developer. With expertise in the Django framework, I specialize in building scalable and dynamic web solutions that empower businesses and engage users. From frontend design to backend architecture, I'm passionate about every aspect of the web development journey. Let's collaborate to bring your digital vision to life!</em></p>
-              <ul>
-                <li>Pakistan, Lahore</li>
-                <li>+92 329 4193741</li>
-                <li>hassanshah9153@gmail.com</li>
-              </ul>
-            </div>
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Bachelor in C`s</h4>
-              <h5>Continue</h5>
-              <p><em>National College of Business Administration & Economics.</em></p>
-              <p>I'm Hassan, a Computer Science student. Eager to learn and explore, I'm delving into the depths of algorithms and software engineering. Let's dive into the world of possibilities together!</p>
-            </div>
-            <div class="resume-item">
-              <h4>Technical Skills</h4>
-              <h5>Languages & Skills</h5>
-              <li>Html</li>
-              <li>Css</li>
-              <li>Python</li>
-              <li>Django</li>
-              <li>Django Rest Framework (DRF)</li>
-              <li>JavaScript</li>
-              <li>Github</li>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Junior Django Developer</h4>
-              <h5>2024 - Present</h5>
-              <p><em>BitFicial Technology</em></p>
-              <ul>
-                <li>Collaborated with a team of developers to design and implement web applications using the Django framework.</li>
-                <li>Contributed to the development and maintenance of various projects. </li>
-                <li>Gained hands-on experience in WebDevelopment using Django</li>
-                <li>Worked closely with cross-functional teams to ensure seamless integration of front-end and back-end components.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Certifications</h4>
-              <ul>
-                <li>Hackers Rank <a href="https://www.hackerrank.com/certificates/006796a9a0dd">Sql Basic</a></li>
-                <li>Hackers Rank <a href="https://www.hackerrank.com/certificates/74084455d1c4">CSS</a></li>
-                <li>Great Learning <a href="https://olympus.mygreatlearning.com/courses/12682/certificate">Python Basics</a></li>
-                <li>Great Learning <a href="https://olympus.mygreatlearning.com/courses/56747/certificate">Python Pandas</a></li>
-                <li>Kaggle <a href="https://www.kaggle.com/learn/certification/syedly4/intro-to-programming">Introduction To Programming Using Python</a></li>
-                <li>SimpliLearn <a href="https://certificates.simplicdn.net/share/4684984_1701391612.pdf">Python Django</a></li>
-                <li>Great Learning <a href="https://olympus.mygreatlearning.com/courses/65515/certificate">Web Development</a></li>
-                <li>SimpliLearn <a href="https://certificates.simplicdn.net/share/4684810_1701384065.pdf">Introduction To Python</a></li>
-                <li>Kaggle <a href="https://www.kaggle.com/learn/certification/syedly4/pandas">Basics Of Pandas</a></li>
-                <li>Kaggle <a href="https://www.kaggle.com/learn/certification/syedly4/python">Python Programming</a></li>
-                <li>Great Learning <a href="https://olympus.mygreatlearning.com/courses/12761/certificate">Introduction To HTML</a></li>
-                <li>SimpliLearn <a href="https://certificates.simplicdn.net/share/4685849_1701417314.pdf">Introduction To FrontEnd</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Resume Section -->
-
-    <!-- ======= project1 Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Projects</h2>
-          <h3>Influx</h3>
-          <p>🌐 Welcome to Influx, the social media web app crafted with Python Django that redefines how we connect and share in the digital age. Influx seamlessly combines the power of Django's robust framework with innovative features, creating a dynamic platform for meaningful social interactions.</p>
-        </div>
-        <div>
-          <a href="https://orginflux.pythonanywhere.com/">influx.com</a>
-        </div>
-        </div>
-
-    </section><!-- End Section -->
-        <!-- ======= project2 Section ======= -->
-        <section id="portfolio" class="portfolio section-bg">
-          <div class="container">
-    
-            <div class="section-title">
-              <h3>BotSphere</h3>
-              <p>**BotSphere** is an innovative web app built with Django, featuring powerful AI capabilities through the Gemini API and secure Google OAuth integration. It offers a seamless, user-friendly experience with sleek HTML, CSS, and JavaScript design. The app includes **Echo**, a personal chatbot that adapts to your style, and an **AI Assistant** to tackle tasks, answer questions, and enhance productivity. Users can even create and customize their own chatbots with unique personalities to suit their needs. Whether for fun, productivity, or innovation, **AI Chatbot Hub** is your gateway to the future of AI-powered interactions.</p>
-            </div>
-            <div>
-              <a href="https://botsphere.pythonanywhere.com/">botsphere.com</a>
-            </div>
-            </div>
-            <br>
-        </section><!-- End Section -->
-    <!-- ======= project2 Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h3>Chat Connect</h3>
-          <p>🌐 Welcome to ChatConnect, the innovative web app built with Python Django that revolutionizes real-time communication. Crafted using Django's powerful Class-Based Views (CBV) and enhanced with an AI-powered system, ChatConnect offers seamless live chat experiences. With its integrated AI, powered by OpenAI’s API, the app not only connects users in real time but also brings smart responses and interactive automation, making every conversation more engaging and intuitive.</p>
-        </div>
-        <div>
-          <a href="https://chatconnect.pythonanywhere.com/">chatconnect.com</a>
-        </div>
-        </div>
-        <br>
-    </section><!-- End Section -->
-    <!-- ======= project3 Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h3>Whisper Stories</h3>
-          <p>
-            🌐 Welcome to Whisper Stories, the blog app crafted entirely with Django’s powerful Class-Based Views (CBV). Whisper Stories harnesses the full potential of Django's generic views, streamlining content creation and management while delivering a seamless user experience. Whether you're writing or reading, Whisper Stories makes storytelling effortless and engaging, with a modern interface and efficient backend built to scale.</p>
-        </div>
-        <div>
-          <a href="https://whisperstories.pythonanywhere.com/">whisperstories.com</a>
-        </div>
-        </div>
-        <br>
-    </section><!-- End Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>Welcome to Web Development Services! I'm a seasoned developer specializing in crafting stunning, responsive websites. Whether you're an individual or business, I offer expertise in HTML, CSS, JavaScript, and frameworks like Django. Let's collaborate to bring your digital vision to life!</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="bi bi-briefcase"></i></div>
-            <h4 class="title"><a href="">Web App</a></h4>
-            <p class="description">Looking for a custom web app? Let's collaborate! I specialize in crafting tailored solutions that fit your needs perfectly. Together, we'll bring your vision to life and propel your business forward</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="bi bi-card-checklist"></i></div>
-            <h4 class="title"><a href="">Web Sites</a></h4>
-            <p class="description">Seeking a custom website? Let's team up! I specialize in crafting bespoke solutions tailored to your needs. Together, we'll transform your vision into a stunning online presence that sets you apart</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="bi bi-bar-chart"></i></div>
-            <h4 class="title"><a href="">Responsive Design</a></h4>
-            <p class="description">Seeking responsive design? Let's craft a site that shines on every device. Together, we'll ensure your online presence looks great, no matter where it's viewed</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon"><i class="bi bi-binoculars"></i></div>
-            <h4 class="title"><a href="">Portfoli Websites</a></h4>
-            <p class="description">Need a standout portfolio site? Let's team up! With my expertise, I'll craft a sleek showcase that highlights your talents. Let's make your portfolio shine!</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i class="bi bi-brightness-high"></i></div>
-            <h4 class="title"><a href="">Dynamic Websites</a></h4>
-            <p class="description">Dynamic website needed? Let's team up! I'll craft a tailored, engaging site to bring your vision to life.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon"><i class="bi bi-calendar4-week"></i></div>
-            <h4 class="title"><a href="">Static websites</a></h4>
-            <p class="description">Looking for a static website? Let's work together! I'll create a clean, efficient site that showcases your content beautifully</p>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Services Section -->
-
-  </main><!-- End #main -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+        // Initialize all expandable sections
+        setupExpandable('skillsContainer', 'showMoreSkills', 'skills');
+        setupExpandable('publicationsContainer', 'showMorePublications', 'publications');
+        setupExpandable('certificatesContainer', 'showMoreCertificates', 'certificates');
+    </script>
 </body>
-
 </html>
